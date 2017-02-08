@@ -1,0 +1,18 @@
+columns:
+    studio:
+        label: Studio
+        type: text
+        searchable: true
+        sortable: true
+        relation: studio
+        select: name
+    title:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: Created
+        type: date
+        searchable: true
+        sortable: true

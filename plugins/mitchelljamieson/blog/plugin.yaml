@@ -1,0 +1,34 @@
+plugin:
+    name: 'mitchelljamieson.blog::lang.plugin.name'
+    description: 'mitchelljamieson.blog::lang.plugin.description'
+    author: 'Mitchell Jamieson'
+    icon: oc-icon-archive
+    homepage: ''
+navigation:
+    weddings:
+        label: Weddings
+        url: mitchelljamieson/blog/weddings
+        icon: icon-file-text
+        permissions:
+            - can_manage_weddings
+        sideMenu:
+            author:
+                label: Authors
+                url: mitchelljamieson/blog/author
+                icon: icon-user
+            studio:
+                label: Studios
+                url: mitchelljamieson/blog/studio
+                icon: icon-building
+            equipment:
+                label: Equipment
+                url: mitchelljamieson/blog/equipment
+                icon: icon-camera
+            song:
+                label: Songs
+                url: mitchelljamieson/blog/song
+                icon: icon-music
+permissions:
+    can_manage_weddings:
+        tab: 'Can Manage Weddings'
+        label: 'Can Manage Weddings'

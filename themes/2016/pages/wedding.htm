@@ -1,0 +1,66 @@
+title = "Wedding"
+url = "/:slug"
+layout = "default"
+description = "One of our featured wedding films."
+meta_title = "wedding"
+meta_description = "One of our featured weddings"
+is_hidden = 0
+==
+<?php
+use MitchellJamieson\Blog\Models\Wedding;
+
+function onStart()
+{
+  	$this['wedding'] = $wedding = Wedding::findBySlug($this->param('slug'));
+
+  	if (! $wedding) {
+  		return redirect('/')->withErrors(['I\'m sorry we can\'t seem to find the post or page you were looking for.']);
+  	}
+
+	$this->page->title = $wedding->title;
+}
+?>
+==
+<div class="row">
+
+	<div class="col-md-3 video-info">
+		<h3>	
+			{% partial 'site/video-title' title=wedding.studio.name link=wedding.studio.website %}
+		</h3>
+		<!-- <div>
+			<span class="fa fa-facebook"></span>
+			<span class="fa fa-twitter"></span>
+			<span class="fa fa-vimeo"></span>
+		</div> -->
+	</div>
+
+	<div class="col-md-6">
+		<div>
+			<div class="video-embed">
+		    	<iframe src="{{ wedding.video_url }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+		</div>   
+		
+		<div>
+		    {% partial 'site/video-review' review=wedding.review hidden=false %}
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<span class="bold">Songs:</span>
+		<p>{% partial 'site/if-empty-list-show-na' items=wedding.songs %}</p>
+
+		{% for song in wedding.songs %}
+			<p>{{ song.name }}</p>
+		{% endfor %}
+		
+		<hr>
+
+		<span class="bold">Equipment:</span>
+		<p>{% partial 'site/if-empty-list-show-na' items=wedding.equipment %}</p>
+
+		{% for item in wedding.equipment %}
+			<p>{{ item.name }}</p>
+		{% endfor %}
+	</div>
+</div>

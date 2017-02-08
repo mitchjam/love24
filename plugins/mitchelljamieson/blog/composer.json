@@ -1,0 +1,22 @@
+{
+    "name": "mitchelljamieson/blog",
+    "type": "october-plugin",
+    "description": "Mitch's blog plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Bobkov",
+            "email": "aleksey.bobkov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "composer/installers": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MitchellJamieson\\Blog\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}

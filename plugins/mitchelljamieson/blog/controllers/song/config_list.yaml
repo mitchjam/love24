@@ -1,0 +1,11 @@
+list: $/mitchelljamieson/blog/models/song/columns.yaml
+modelClass: MitchellJamieson\Blog\Models\Song
+title: Song
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'mitchelljamieson/blog/song/update/:id'

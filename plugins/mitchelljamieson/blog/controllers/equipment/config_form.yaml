@@ -1,0 +1,10 @@
+name: Equipment
+form: $/mitchelljamieson/blog/models/equipment/fields.yaml
+modelClass: MitchellJamieson\Blog\Models\Equipment
+defaultRedirect: mitchelljamieson/blog/equipment
+create:
+    redirect: 'mitchelljamieson/blog/equipment/update/:id'
+    redirectClose: mitchelljamieson/blog/equipment
+update:
+    redirect: mitchelljamieson/blog/equipment
+    redirectClose: mitchelljamieson/blog/equipment

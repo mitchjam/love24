@@ -1,0 +1,103 @@
+title = "Submit"
+url = "/submit"
+layout = "default"
+description = "Submit your best wedding video to possibly be featured."
+meta_title = "submit"
+meta_description = "Submit your wedding film to be featured."
+is_hidden = 0
+==
+<div class="row">
+
+	<div class="col-lg-6 submission-form">
+		<form action="/submit" method="POST">
+
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label for="studio" class="control-label">Studio Name</label>
+					<input name="studio" type="text" class="form-control">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="email" class="control-label">Email</label>
+					<input name="email" type="email" class="form-control">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="video_url" class="control-label">Video Url</label>
+				<input name="video_url" type="text" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="music" class="control-label">Music Used</label>
+				<input name="music" type="text" class="form-control">
+				<small class="form-text gray-text">Comma seperated list of music used in this video and where you sourced it.</small>
+			</div>
+
+			<div class="form-group">
+				<label for="equipment" class="control-label">Equipment</label>
+				<input name="equipment" type="text" class="form-control">
+				<small class="form-text gray-text">Comma seperated list of equipment you used to shoot this video.</small>
+			</div>
+
+			<div class="form-group">
+				<label for="comments" class="control-label">Comments</label>
+				<textarea name="comments" class="form-control" rows="10"></textarea>
+			</div>
+
+			<button class="btn btn-primary mb-2">Submit</button>
+		</form>
+	</div>
+
+	<div class="col-lg-6 submission-guidlines">
+		<h3>
+			{% partial 'site/small-caps' string='Guidlines' %}
+		</h3>
+		<!-- <h3>Guidlines</h3> -->
+
+		<p>Tim and I are always looking for great videos to feature. We watch every submission that comes in the door and if you'd like to submit a different kind of live event film we'd love to see it! Before you submit though, we would like you to keep a few things in mind:</p>
+
+		<ul>
+			<li>Submit one film at a time and not more than one a month.</li>
+			<li>No copyright material. All music must be fully licensed and you must include song title(s), artist name(s) and where you licensed the music.</li>
+			<li>If at all possible host your film on Vimeo. We won't reject a submission just because it isn't but we massively prefer Vimeo.</li>
+			<li>Try to keep submissions under 8 minutes.</li>
+			<li>The event being filmed has to have happened in the past 12 months.</li>
+		</ul>
+
+		<p>These things just make everyones life easier. If your submission doesn't meet these guidlines the likelihood that we will look at it is unfortunately very low. If it does however, we will watch it and get back to you as soon as we can. As always thank you for being a part of this community and please reach out to us in the comments section!</p>
+
+		<!-- <hr>
+
+		<h3>
+			{% partial 'site/small-caps' string='Tips' %}
+		</h3>
+
+		<p>After watching our fair share of wedding videos we've compiled a list of criteria that we typically find in a "good" wedding video. Although, as always...</p>
+
+		<blockquote class="blockquote">
+			<p class="mb-0">"Learn the rules, break the rules, make up new rules, break the new rules."</p>
+			<footer class="blockquote-footer"><cite>Marvin Bell</cite>
+		</blockquote>
+
+		<p>
+			<span class="bold">Nail the thumbnail</span>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+		</p>
+		<p>
+			<span class="bold">Keep blurry or overexposed shots</span>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's sta
+		</p>
+		<p>
+			<span class="bold">Noise or hissing audio</span>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambl
+		</p>
+		<p>
+			<span class="bold">Unique music choices</span>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's stan
+		</p>
+		<p>
+			<span class="bold">We want to feel something not just look at shots from you're new toy or </span>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has suLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dum
+		</p> -->
+	</div>
+</div>

@@ -1,0 +1,57 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: full
+        required: 1
+        type: text
+    video_url:
+        label: Video_url
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'https://player.vimeo.com/video/188726644'
+        required: 1
+        type: text
+    studio:
+        label: Studio
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    songs:
+        label: Songs
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    equipment:
+        label: Equipment
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    author:
+        label: 'Post Author'
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    review:
+        label: Review
+        oc.commentPosition: ''
+        span: full
+        placeholder: 'This is the body of the post.'
+        required: 1
+        type: textarea
+        size: huge
+    published_at:
+        label: Publish
+        type: switch

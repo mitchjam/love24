@@ -1,0 +1,10 @@
+name: Author
+form: $/mitchelljamieson/blog/models/author/fields.yaml
+modelClass: MitchellJamieson\Blog\Models\Author
+defaultRedirect: mitchelljamieson/blog/author
+create:
+    redirect: 'mitchelljamieson/blog/author/update/:id'
+    redirectClose: mitchelljamieson/blog/author
+update:
+    redirect: mitchelljamieson/blog/author
+    redirectClose: mitchelljamieson/blog/author

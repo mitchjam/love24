@@ -1,0 +1,13 @@
+list: $/mitchelljamieson/blog/models/wedding/columns.yaml
+modelClass: MitchellJamieson\Blog\Models\Wedding
+title: Weddings
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'mitchelljamieson/blog/weddings/update/:id'
+defaultSort: 
+  created_at: 'desc'

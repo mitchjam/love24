@@ -1,0 +1,37 @@
+==
+<?php
+
+// Parameters
+// string: string
+
+function onStart()
+{
+    $this['words'] = $this->splitIntoWords(strtoupper($this['string']));
+}
+
+function splitIntoWords($string) {
+	$return = collect(explode(' ', $string))->reduce(function($carry, $word) {
+		$carry[] = ['firstLetter' => $this->firstLetter($word), 'theRest' =>$this->theRest($word)];
+
+		return $carry;
+	}, []);
+
+	return $return;
+}
+
+function firstLetter($word) 
+{
+    return substr($word, 0, 1);
+}
+
+function theRest($word) {
+	return substr($word, 1);
+}
+
+?>
+==
+<span class="small-caps">
+{% for word in words %}
+	<span class="first-letter">{{ word.firstLetter }}</span><span class="the-rest">{{ word.theRest }}</span>
+{% endfor %}
+</span>

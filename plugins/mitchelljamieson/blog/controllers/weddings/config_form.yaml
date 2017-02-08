@@ -1,0 +1,10 @@
+name: Weddings
+form: $/mitchelljamieson/blog/models/wedding/fields.yaml
+modelClass: MitchellJamieson\Blog\Models\Wedding
+defaultRedirect: mitchelljamieson/blog/weddings
+create:
+    redirect: 'mitchelljamieson/blog/weddings/update/:id'
+    redirectClose: mitchelljamieson/blog/weddings
+update:
+    redirect: mitchelljamieson/blog/weddings
+    redirectClose: mitchelljamieson/blog/weddings

@@ -1,0 +1,95 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table mitchelljamieson_blog_posts'
+    - builder_table_create_mitchelljamieson_blog_posts.php
+1.0.3:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts.php
+1.0.4:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts_2.php
+1.0.5:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts_3.php
+1.0.6:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts_4.php
+1.0.7:
+    - 'Created table mitchelljamieson_blog_equipment_post'
+    - builder_table_create_mitchelljamieson_blog_equipment_post.php
+1.0.8:
+    - 'Created table mitchelljamieson_blog_equipments'
+    - builder_table_create_mitchelljamieson_blog_equipments.php
+1.0.9:
+    - 'Created table mitchelljamieson_blog_studios'
+    - builder_table_create_mitchelljamieson_blog_studios.php
+1.0.10:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts_5.php
+1.0.11:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts_6.php
+1.0.12:
+    - 'Created table mitchelljamieson_blog_music_post'
+    - builder_table_create_mitchelljamieson_blog_music_post.php
+1.0.13:
+    - 'Created table mitchelljamieson_blog_music'
+    - builder_table_create_mitchelljamieson_blog_music.php
+1.0.14:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_posts_7.php
+1.0.15:
+    - 'Updated table mitchelljamieson_blog_equipment_post'
+    - builder_table_update_mitchelljamieson_blog_equipment_post.php
+1.0.16:
+    - 'Updated table mitchelljamieson_blog_equipment_post'
+    - builder_table_update_mitchelljamieson_blog_equipment_wedding.php
+1.0.17:
+    - 'Updated table mitchelljamieson_blog_music_post'
+    - builder_table_update_mitchelljamieson_blog_music_wedding.php
+1.0.18:
+    - 'Updated table mitchelljamieson_blog_equipment_wedding'
+    - builder_table_update_mitchelljamieson_blog_equipment_wedding_2.php
+1.0.19:
+    - 'Updated table mitchelljamieson_blog_posts'
+    - builder_table_update_mitchelljamieson_blog_weddings.php
+1.0.20:
+    - 'Created table mitchelljamieson_blog_authors'
+    - builder_table_create_mitchelljamieson_blog_authors.php
+1.0.21:
+    - 'Updated table mitchelljamieson_blog_music'
+    - builder_table_update_mitchelljamieson_blog_musics.php
+1.0.22:
+    - 'Updated table mitchelljamieson_blog_weddings'
+    - builder_table_update_mitchelljamieson_blog_weddings_2.php
+1.0.23:
+    - 'Updated table mitchelljamieson_blog_weddings'
+    - builder_table_update_mitchelljamieson_blog_weddings_3.php
+1.0.24:
+    - 'Updated table mitchelljamieson_blog_musics'
+    - builder_table_update_mitchelljamieson_blog_songs.php
+1.0.25:
+    - 'Updated table mitchelljamieson_blog_music_wedding'
+    - builder_table_update_mitchelljamieson_blog_song_wedding.php
+1.0.26:
+    - 'Updated table mitchelljamieson_blog_songs'
+    - builder_table_update_mitchelljamieson_blog_songs_2.php
+1.0.27:
+    - 'Created table mitchelljamieson_blog_submissions'
+    - builder_table_create_mitchelljamieson_blog_submissions.php
+1.0.28:
+    - 'Updated table mitchelljamieson_blog_submissions'
+    - builder_table_update_mitchelljamieson_blog_submissions.php
+1.0.29:
+    - 'Updated table mitchelljamieson_blog_submissions'
+    - builder_table_update_mitchelljamieson_blog_submissions_2.php
+1.0.30:
+    - 'Updated table mitchelljamieson_blog_submissions'
+    - builder_table_update_mitchelljamieson_blog_submissions_3.php
+1.0.31:
+    - 'Updated table mitchelljamieson_blog_weddings'
+    - builder_table_update_mitchelljamieson_blog_weddings_4.php
+1.0.32:
+    - 'Updated table mitchelljamieson_blog_weddings'
+    - builder_table_update_mitchelljamieson_blog_weddings_5.php

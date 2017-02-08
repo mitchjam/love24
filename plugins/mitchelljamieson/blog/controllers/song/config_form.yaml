@@ -1,0 +1,10 @@
+name: Song
+form: $/mitchelljamieson/blog/models/song/fields.yaml
+modelClass: MitchellJamieson\Blog\Models\Song
+defaultRedirect: mitchelljamieson/blog/song
+create:
+    redirect: 'mitchelljamieson/blog/song/update/:id'
+    redirectClose: mitchelljamieson/blog/song
+update:
+    redirect: mitchelljamieson/blog/song
+    redirectClose: mitchelljamieson/blog/song

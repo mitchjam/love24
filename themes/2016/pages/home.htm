@@ -1,0 +1,53 @@
+title = "Home"
+url = "/"
+layout = "default"
+description = "Our tailored list of wedding videos."
+meta_title = "home"
+meta_description = "List of featured wedding films."
+is_hidden = 0
+==
+<?php
+use MitchellJamieson\Blog\Models\Wedding;
+
+function onStart()
+{
+  	$this['weddings'] = Wedding::published()->orderBy('created_at', 'desc')->simplePaginate(5);
+  	$this['paginator'] = $this['weddings']->toArray();
+
+  	$this['prev_page_class'] = $this['paginator']['current_page'] == 1 ? 'hidden' : 'visible';
+  	$this['next_page_class'] = ! $this['weddings']->hasMorePages() ? 'hidden' : 'visible';
+}
+?>
+==
+{% for wedding in weddings %}
+<div class="row blog-post">
+	
+	<div class="col-lg-12">
+		<h3>
+			{% partial 'site/video-title' title=wedding.studio.name link=wedding.studio.website %}
+		</h3>
+	</div>
+
+	<div class="col-lg-6">
+		<div class="video-embed">
+	    	<iframe src="{{ wedding.video_url }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	    </div>
+	</div>
+	
+	<div class="col-lg-6">
+		<a class="gray-link" href="/{{ str_slug(wedding.title) }}">
+		    {% partial 'site/video-review' review=wedding.review  is_excerpt=true hidden=true%}
+		</a>
+	</div>
+</div>
+
+<hr class="divider">
+{% endfor %}
+
+<h6 class="flex justify-content-center">
+	<a class="gray-link mr-3 {{ prev_page_class }}" href="{{ paginator.prev_page_url }}"><span class="fa fa-chevron-left"></span></a>
+
+	<p class="mr-3 mb-0">Page {{ paginator.current_page }}</p>
+
+	<a class="gray-link {{ next_page_class }}" href="{{ paginator.next_page_url }}"><span class="fa fa-chevron-right"></span></a>
+</h6>

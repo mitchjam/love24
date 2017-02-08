@@ -1,0 +1,36 @@
+==
+<?php
+
+use October\Rain\Support\Facades\Markdown;
+
+function onStart()
+{
+	// Parse the markdown, remove the html, trim.
+	$reviewText = trim(strip_tags(Markdown::parse($this['review'])));
+	if (empty($reviewText)) {
+		$this['theRest'] = 'Sorry, we don\'t have a review for this video.';
+
+		return true;
+	}
+
+	$firstWord = explode(' ', $reviewText)[0];
+	$positionOfFirstWord = strpos($this['review'], $firstWord);
+
+    $this['firstLetter'] = strtoupper(substr($reviewText, 0, 1));
+    $this['theRest'] = Markdown::parse(substr($this['review'], $positionOfFirstWord + 1));
+
+    if ($this['is_excerpt']) {
+	    // Remove the html if it is an excerpt
+	    $this['theRest'] = strip_tags($this['theRest']);
+    }
+}
+
+?>
+==
+
+<div class="video-review" style="visibility: {{ hidden ? 'hidden' : 'visible' }}; height: {{ hidden ? 0 : 'auto' }};;">
+	<span class="first-letter">{{ firstLetter }}</span>
+	<span class="the-rest">{{ theRest | raw }}</span>
+	<span class="ellipsis-reference" style="visibility: hidden; position: absolute;">rstlne</span>
+</div>
+

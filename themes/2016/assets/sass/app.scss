@@ -1,0 +1,133 @@
+$brand-gray:   #9a9a9a !default;
+$brand-gray-light:   #cacaca !default;
+$menu-font: 'Roboto', sans-serif;
+
+// Overwrite bootstrap variables
+$enable-flex:               true !default;
+
+$brand-primary:             #0275d8 !default;
+$brand-success:             #3aa549 !default;
+$brand-info:                #5bc0de !default;
+$brand-warning:             #f0ad4e !default;
+$brand-danger:              #d9534f !default;
+
+@import '../vendor/bootstrap/scss/bootstrap';
+@import '../vendor/font-awesome/scss/font-awesome';
+@import 'header';
+@import 'text';
+
+// Styles per page
+.home {
+	@import 'home';
+}
+.wedding {
+	@import 'wedding';
+}
+.submit {
+	@import 'submit';
+}
+
+// Site wide styles
+body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	line-height: 1.7rem;
+	color: #2e2e2e;
+}
+body * {
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Playfair Display', serif !important;
+	word-spacing: normal;
+}
+a.gray-link {
+	color: #2e2e2e;
+	text-decoration: none;
+	&:hover * {
+		color: $brand-gray;
+	}
+}
+small {
+	font-weight: 300;
+}
+.flex {
+	display: flex;
+}
+.flex-reverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+.flex-column {
+	flex-direction: column;
+}
+.justify-content-around {
+	justify-content: space-around;
+}
+.items-center {
+	align-items: center;
+}
+.justify-content-center {
+	justify-content: center;
+}
+.visible {
+	visibility: visible;
+}
+.hidden {
+	visibility: hidden;
+}
+.content {
+	width: 75%;
+	margin: auto;
+	margin-bottom: $spacer;
+	max-width: 1100px;
+}
+.video-embed {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}	
+.small-caps {
+	word-spacing: normal;
+	.first-letter, .the-rest {
+		font-family: 'Playfair Display', serif !important;
+		font-weight: bold;
+	}
+	.first-letter {
+		font-size: 100%;
+	}
+	.the-rest {
+		font-size: 71.2%;
+	}
+}
+.video-review {
+	color: #000;
+	.first-letter {
+		font-family: 'Playfair Display', serif !important;
+		font-weight: 500;
+		font-size: 150%;
+	}
+	.the-rest {
+		p:first-child {
+			display: inline;
+		}
+		p:nth-child(2) {
+			margin-top: $spacer;
+		}
+	}
+}
+.clickable {
+	cursor: pointer;
+}
+.divider {
+	margin: 0 -50px;
+}

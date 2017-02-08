@@ -1,0 +1,10 @@
+name: Studio
+form: $/mitchelljamieson/blog/models/studio/fields.yaml
+modelClass: MitchellJamieson\Blog\Models\Studio
+defaultRedirect: mitchelljamieson/blog/studio
+create:
+    redirect: 'mitchelljamieson/blog/studio/update/:id'
+    redirectClose: mitchelljamieson/blog/studio
+update:
+    redirect: mitchelljamieson/blog/studio
+    redirectClose: mitchelljamieson/blog/studio

@@ -1,0 +1,18 @@
+==
+<?php
+
+// Parameters
+// link: string
+
+?>
+==
+
+{% if link %}
+<a class="video-title gray-link" href="{{ link }}" target="_blank">
+	{% partial 'site/small-caps' string=title %}
+</a>
+{% else %}
+<div class="video-title">
+	{% partial 'site/small-caps' string=title %}
+</div>
+{% endif %}
