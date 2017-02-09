@@ -1,0 +1,29 @@
+columns:
+    studio:
+        label: Studio
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        type: text
+        searchable: true
+        sortable: true
+    video_url:
+        label: 'Video Url'
+        type: text
+    music:
+        label: Music
+        type: text
+        searchable: false
+    equipment:
+        label: Equipment
+        type: text
+        searchable: true
+    comments:
+        label: Comments
+        type: text
+    created_at:
+        label: Submitted
+        type: datetime
+        sortable: true

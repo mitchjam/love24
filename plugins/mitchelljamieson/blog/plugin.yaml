@@ -28,6 +28,12 @@ navigation:
                 label: Songs
                 url: mitchelljamieson/blog/song
                 icon: icon-music
+    submissions:
+        label: Submissions
+        url: /mitchelljamieson/blog/submissions
+        icon: icon-send
+        permissions:
+            - can_manage_weddings
 permissions:
     can_manage_weddings:
         tab: 'Can Manage Weddings'

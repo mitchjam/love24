@@ -1,0 +1,10 @@
+list: $/mitchelljamieson/blog/models/submission/columns.yaml
+modelClass: MitchellJamieson\Blog\Models\Submission
+title: Submissions
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
