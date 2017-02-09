@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir');
 
 var assetsPath = elixir.config.assetsPath = 'themes/2016/assets/';
-var publicPath = elixir.config.publicPath = 'themes/2016/assets/compiled/';
+var publicPath = elixir.config.publicPath = 'themes/2016/assets/public/';
 
 // Root path from assets dir
 var rootPath = '../../../../'

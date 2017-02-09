@@ -2,6 +2,7 @@
 /vendor
 /node_modules
 /install_files
+themes/2016/assets/vendor
 composer.phar
 .DS_Store
 .idea
