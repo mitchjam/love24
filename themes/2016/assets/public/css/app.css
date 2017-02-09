@@ -10112,6 +10112,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   width: 100%;
 }
 
+@media (max-width: 991px) {
+  .header-logo {
+    width: 100px;
+  }
+}
+
 .header-social {
   width: 8%;
   margin-right: 10px;
