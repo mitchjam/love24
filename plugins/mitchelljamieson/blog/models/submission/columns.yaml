@@ -1,6 +1,4 @@
 columns:
-    defaultSort:
-        created_at: 'desc'
     studio:
         label: Studio
         type: text

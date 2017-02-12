@@ -8,3 +8,6 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
+defaultSort:
+    column: 'created_at'
+    direction: 'desc'

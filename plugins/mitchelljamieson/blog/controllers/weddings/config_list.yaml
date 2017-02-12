@@ -9,5 +9,6 @@ toolbar:
     search:
         prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'mitchelljamieson/blog/weddings/update/:id'
-defaultSort: 
-  created_at: 'desc'
+defaultSort:
+    column: 'created_at'
+    direction: 'desc'

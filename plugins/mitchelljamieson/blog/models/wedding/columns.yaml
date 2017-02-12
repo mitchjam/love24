@@ -16,3 +16,4 @@ columns:
         type: date
         searchable: true
         sortable: true
+
