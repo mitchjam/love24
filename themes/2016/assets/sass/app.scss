@@ -52,6 +52,23 @@ a.gray-link {
 small {
 	font-weight: 300;
 }
+input, textarea {
+	&:invalid {
+		border: 1px solid $brand-warning;	
+	}
+	&:required:valid {
+		border: 1px solid $brand-success;
+	}
+	&:focus {
+		&:invalid {
+			border: 1px solid $brand-danger;	
+		}
+		&:valid {
+				border: 1px solid $brand-success;
+			}
+	}
+	
+}
 .flex {
 	display: flex;
 }

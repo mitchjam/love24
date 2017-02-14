@@ -10250,6 +10250,22 @@ small {
   font-weight: 300;
 }
 
+input:invalid, textarea:invalid {
+  border: 1px solid #f0ad4e;
+}
+
+input:required:valid, textarea:required:valid {
+  border: 1px solid #3aa549;
+}
+
+input:focus:invalid, textarea:focus:invalid {
+  border: 1px solid #d9534f;
+}
+
+input:focus:valid, textarea:focus:valid {
+  border: 1px solid #3aa549;
+}
+
 .flex {
   display: -webkit-box;
   display: flex;
