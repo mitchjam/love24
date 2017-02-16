@@ -10,4 +10,9 @@
 
 	// To align the title with the ~top of the video
 	margin-top: -5px;
+
+    @include media-breakpoint-down(sm) {
+        text-align: left;
+        align-items: flex-start;
+    }
 }

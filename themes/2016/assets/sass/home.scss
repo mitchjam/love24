@@ -12,14 +12,6 @@
 		margin-bottom: 0;
 	}
 }
-.gray-link {
-	color: #2e2e2e;
-	text-decoration: none !important;
-	&:hover * {
-		cursor: pointer;
-		color: $brand-gray;
-	}
-}
 .divider:last-of-type {
 	display: none;
 }

@@ -31,6 +31,9 @@ function onStart()
 <div class="video-review" style="visibility: {{ hidden ? 'hidden' : 'visible' }}; height: {{ hidden ? 0 : 'auto' }};;">
 	<span class="first-letter">{{ firstLetter }}</span>
 	<span class="the-rest">{{ theRest | raw }}</span>
+    {% if is_excerpt %}
+        &nbsp;<i class="fa fa-arrow-right text-primary" style="font-weight: 300"></i>
+    {% endif %}
 	<span class="ellipsis-reference" style="visibility: hidden; position: absolute;">rstlne</span>
 </div>
 
