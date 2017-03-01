@@ -20,6 +20,9 @@ $brand-danger:              #d9534f !default;
 .home {
 	@import 'home';
 }
+.about {
+	@import 'about';
+}
 .wedding {
 	@import 'wedding';
 }
@@ -72,6 +75,9 @@ input, textarea {
 			}
 	}
 	
+}
+.inline-block {
+	display: inline-block;
 }
 .flex {
 	display: flex;

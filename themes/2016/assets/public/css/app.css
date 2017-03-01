@@ -10187,6 +10187,15 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 }
 
+.about .disclosure {
+  padding-top: 1rem;
+}
+
+.about .disclosure .title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .wedding .video-review {
   padding-top: 1rem;
 }
@@ -10268,6 +10277,10 @@ input:focus:invalid, textarea:focus:invalid {
 
 input:focus:valid, textarea:focus:valid {
   border: 1px solid #3aa549;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
