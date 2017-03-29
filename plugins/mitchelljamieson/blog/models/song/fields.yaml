@@ -9,13 +9,13 @@ fields:
         oc.commentPosition: ''
         span: auto
         type: text
-    music_provider:
+    provider:
         label: Provider
         oc.commentPosition: ''
         options:
-            musicbed: Musicbed
-            songfreedom: SongFreedom
-            triplescoop: Triplescoop
+            Musicbed: Musicbed
+            SongFreedom: SongFreedom
+            Triplescoop: Triplescoop
         span: auto
         type: dropdown
     link:
