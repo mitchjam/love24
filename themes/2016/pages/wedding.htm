@@ -53,7 +53,7 @@ function onStart()
 			<ul class="list-unstyled">
 				{% for song in wedding.songs %}
 					<li>
-						<a href="{{ song.link }}" target="_blank">{{ song.name }} - {{ song.artist }}</a>
+						<a href="{{ song.link }}" target="_blank">{{ song.name }} - {{ song.provider }}</a>
 					</li>
 				{% endfor %}
 			</ul>
