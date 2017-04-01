@@ -47,26 +47,34 @@ function onStart()
 	</div>
 
 	<div class="col-md-3">
-		<span class="bold">Songs:</span>
-		{% partial 'site/if-empty-list-show-na' items=wedding.songs %}
 
+		<span class="bold">Songs:</span>
 		{% if wedding.songs | length %}
-		<ul class="list-unstyled">
-			{% for song in wedding.songs %}
-				<li>
-					<a href="{{ song.link }}">{{ song.name }} - {{ song.artist }}</a>
-				</li>
-			{% endfor %}
-		</ul>
+			<ul class="list-unstyled">
+				{% for song in wedding.songs %}
+					<li>
+						<a href="{{ song.link }}" target="_blank">{{ song.name }} - {{ song.artist }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p><span>n/a</span></p>
 		{% endif %}
 		
 		<hr>
 
 		<span class="bold">Equipment:</span>
-		<p>{% partial 'site/if-empty-list-show-na' items=wedding.equipment %}</p>
+		{% if wedding.songs | length %}
+			<ul class="list-unstyled">
+				{% for item in wedding.equipment %}
+					<li>
+						<a href="{{ item.affiliate_link }}" target="_blank">{{ item.name }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p><span>n/a</span></p>
+		{% endif %}
 
-		{% for item in wedding.equipment %}
-			<p>{{ item.name }}</p>
-		{% endfor %}
 	</div>
 </div>

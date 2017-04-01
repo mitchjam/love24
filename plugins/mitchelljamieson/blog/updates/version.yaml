@@ -96,3 +96,6 @@
 1.0.33:
     - 'Updated table mitchelljamieson_blog_songs'
     - builder_table_update_mitchelljamieson_blog_songs_3.php
+1.0.34:
+    - 'Updated table mitchelljamieson_blog_equipment_wedding'
+    - builder_table_update_mitchelljamieson_blog_equipment_wedding_3.php
