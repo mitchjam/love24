@@ -3,6 +3,7 @@
 use Model;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use MitchellJamieson\Blog\Models\Equipment;
 use Illuminate\Http\Exception\HttpResponseException;
 
 /**
@@ -72,6 +73,30 @@ class Wedding extends Model
     public function getPublishedAtAttribute($value)
     {
         return (bool) $value;
+    }
+
+    // Get options for the equipment checkbox list
+    public function getEquipmentOptions($value, $formData)
+    {
+        $equipment = Equipment::orderBy('name', 'asc')->get()->reduce(function($carry, $item) {
+            $carry[$item->id] = $item->name;
+
+            return $carry;
+        }, []);
+
+        return $equipment;
+    }
+
+    // Get options for the songs checkbox list
+    public function getSongsOptions($value, $formData)
+    {
+        $songs = Song::orderBy('name', 'asc')->get()->reduce(function($carry, $item) {
+            $carry[$item->id] = $item->name;
+
+            return $carry;
+        }, []);
+
+        return $songs;
     }
      
     /**
