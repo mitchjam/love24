@@ -14,7 +14,10 @@ fields:
         oc.commentPosition: ''
         options:
             Musicbed: Musicbed
-            SongFreedom: SongFreedom
+            Marmoset: Marmoset
+            'Given Permission': 'Given Permission'
+            Songfreedom: Songfreedom
+            Soundstripe: Soundstripe
             Triplescoop: Triplescoop
         span: auto
         type: dropdown
