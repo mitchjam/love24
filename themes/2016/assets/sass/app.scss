@@ -60,9 +60,6 @@ small {
 	font-weight: 300;
 }
 input, textarea {
-	&:invalid {
-		border: 1px solid $brand-warning;	
-	}
 	&:required:valid {
 		border: 1px solid $brand-success;
 	}

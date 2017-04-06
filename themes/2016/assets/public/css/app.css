@@ -10263,10 +10263,6 @@ small {
   font-weight: 300;
 }
 
-input:invalid, textarea:invalid {
-  border: 1px solid #f0ad4e;
-}
-
 input:required:valid, textarea:required:valid {
   border: 1px solid #3aa549;
 }
