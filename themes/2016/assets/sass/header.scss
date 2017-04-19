@@ -2,29 +2,26 @@
 	position: relative;
 }
 .header {
+	flex-basis: 10%;
 	padding-top: ($grid-gutter-width-base / 2);
 }
 .header-menu {
-	position: absolute;
-	right: ($grid-gutter-width-base / 2);
-	top: 0;
-	ul {
-		margin-bottom: 0;
-		list-style: none;
-		max-height: 50px;
-		.menu-link {
-			padding: 12px 20px;
-			color: $brand-gray !important;
-			font-family: $menu-font !important;
-			&:hover {
-				background-color: $gray-lightest;
-				text-decoration: none;
-			}
+	flex-grow: 1;
+	margin-bottom: 0;
+	list-style: none;
+	max-height: 50px;
+	.menu-link {
+		padding: 12px 20px;
+		color: $brand-gray !important;
+		font-family: $menu-font !important;
+		&:hover {
+			background-color: $gray-lightest;
+			text-decoration: none;
 		}
-	}
+		}
 }
 .header-logo {
-	width: 8%;
+	width: 100%;
 	margin-right: 10px;
 	img {
 		width: 100%;

@@ -1,21 +1,6 @@
 <!-- Nav -->
 <nav id="layout-nav" class="container-fluid" role="navigation">
-
-        <div class="flex flex-items-xs-right header-menu" aria-expanded="true">
-            <ul class="flex">
-                <!-- <div class="menu-link" style="border-top: 3px solid #c18cea" href="{{ 'about'|page }}">
-                    <li class="fa fa-search"></li>
-                </div> -->
-
-                <a class="menu-link" style="border-top: 3px solid #f9b46c" href="{{ 'about'|page }}">
-                    <li>About</li>
-                </a>
-
-                <a class="menu-link" style="border-top: 3px solid #7fdcfb" href="{{ 'submit'|page }}">
-                    <li>Submit</li>
-                </a>
-            </ul>
-        </div>
+    <div class="flex">
 
         <div class="flex items-center header">
             <div class="header-logo">
@@ -23,11 +8,27 @@
                     <img class="clickable" src="{{ 'assets/images/logo.png'|theme }}">
                 </a>
             </div>
-
+        
             <div class="flex flex-column">
                 <a class="gray-link clickable" target="_blank" href="https://www.facebook.com/love24fps"><span class="fa fa-facebook mb-1"></span></a>
-
+        
                 <a class="gray-link clickable" target="_blank" href="https://twitter.com/love24fps"><span class="fa fa-twitter"></span></a>
             </div>
         </div>
+            
+        <ul class="flex flex-items-xs-right header-menu">
+            <div class="menu-link clickable header-search" style="border-top: 3px solid #c18cea">
+                <li class="fa fa-search"></li>
+            </div>
+    
+            <a class="menu-link" style="border-top: 3px solid #f9b46c" href="{{ 'about'|page }}">
+                <li>About</li>
+            </a>
+    
+            <a class="menu-link" style="border-top: 3px solid #7fdcfb" href="{{ 'submit'|page }}">
+                <li>Submit</li>
+            </a>
+        </ul>
+
+    </div>
 </nav>

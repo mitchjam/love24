@@ -11,7 +11,17 @@ use MitchellJamieson\Blog\Models\Wedding;
 
 function onStart()
 {
-  	$this['weddings'] = Wedding::published()->orderBy('created_at', 'desc')->simplePaginate(5);
+	$search = app('request')->get('search') ?? '';
+
+  	$this['weddings'] = Wedding::published()
+  		->where('title', 'like', "%{$search}%")
+  		->orWhereHas('studio', function($query) use ($search) {
+  			$query->where('name', 'like', "%{$search}%");
+  		})
+  		->orderBy('created_at', 'desc')
+  		->simplePaginate(5)
+  		->appends(['search' => $search]);
+
   	$this['paginator'] = $this['weddings']->toArray();
 
   	$this['prev_page_class'] = $this['paginator']['current_page'] == 1 ? 'hidden' : 'visible';
