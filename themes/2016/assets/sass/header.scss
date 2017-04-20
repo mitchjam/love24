@@ -11,6 +11,8 @@
 	list-style: none;
 	max-height: 50px;
 	.menu-link {
+		display: flex;
+		align-items: center;
 		padding: 12px 20px;
 		color: $brand-gray !important;
 		font-family: $menu-font !important;
@@ -18,7 +20,29 @@
 			background-color: $gray-lightest;
 			text-decoration: none;
 		}
+	}
+	.header-search {
+		&:hover, &.active  {
+			flex-grow: 1;
+			input {
+				display: inline-block;
+				border-bottom: 1px solid $gray-lighter;
+			}
 		}
+		form, input {
+			flex-grow: 1;
+		}
+		input {
+			display: none;
+			border: none;
+			margin-left: $spacer; 
+			color: $brand-gray;
+			font-weight: 300;
+			box-shadow: none;
+			outline: none;
+			background: transparent;
+		}
+	}
 }
 .header-logo {
 	width: 100%;
@@ -28,33 +52,5 @@
 	}
 	@include media-breakpoint-down(md) {
 		width: 100px;
-	}
-}
-.header-social {
-	width: 8%;
-	margin-right: 10px;
-	display: flex;
-	justify-content: space-around;
-}
-.header-brand {
-	width: 92%;
-}
-.header-tagline {
-	font-size: 1.5em;
-	margin-bottom: 0;
-	color: $gray;
-	border-bottom: 3px solid #eaeaea;
-}
-.header-search {
-	width: 100%;
-	border: none;
-	color: #a5a5a5;
-	font-weight: 300;
-	padding-top: 5px;
-	height: 2.3em;
-	&:focus {
-		border: none;
-		box-shadow: none;
-		outline: none;
 	}
 }

@@ -37,7 +37,7 @@ body {
 	line-height: 1.7rem;
 	color: #2e2e2e;
 }
-body * {
+body *, input {
 	box-sizing: border-box;
 	transition: all 0.2s ease;
 }
@@ -58,20 +58,6 @@ a.gray-link {
 }
 small {
 	font-weight: 300;
-}
-input, textarea {
-	&:required:valid {
-		border: 1px solid $brand-success;
-	}
-	&:focus {
-		&:invalid {
-			border: 1px solid $brand-danger;	
-		}
-		&:valid {
-				border: 1px solid $brand-success;
-			}
-	}
-	
 }
 .inline-block {
 	display: inline-block;

@@ -3,7 +3,7 @@ window.Tether = require('../vendor/tether/dist/js/tether.js');
 require('../vendor/bootstrap/dist/js/bootstrap.js');
 
 function chopReview() {
-	if (document.querySelector('.home') != null) {
+	if (document.querySelector('.home') != null && document.querySelector('.video-embed')) {
 		var videoHeight = document.querySelector('.video-embed').clientHeight;
 		var singleLineHeight = document.querySelector('.ellipsis-reference').clientHeight;
 		var reviewWidth = document.querySelector('.video-review').clientWidth;
@@ -24,5 +24,16 @@ function chopReview() {
 }
 
 chopReview();
+
+$('.header-search input').focus(function(event) {
+	$('.header-search').addClass('active');
+});
+
+$('.header-search input').blur(function(event) {
+	$('.header-search').removeClass('active');
+});
+
+
+
 
 

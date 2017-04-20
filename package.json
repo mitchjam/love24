@@ -5,6 +5,7 @@
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-14",
+    "vue": "^2.2.6",
     "yarn": "^0.19.1"
   },
   "devDependencies": {

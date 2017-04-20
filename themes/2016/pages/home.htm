@@ -54,6 +54,10 @@ function onStart()
 <hr class="divider">
 {% endfor %}
 
+{% if weddings is empty %}
+    <h4 class="flex justify-content-center mb-3">Sorry, we could find any matching weddings.</h4>
+{% endif %}
+
 <h6 class="flex justify-content-center">
 	<a class="gray-link mr-3 {{ prev_page_class }}" href="{{ paginator.prev_page_url }}"><span class="fa fa-chevron-left"></span></a>
 

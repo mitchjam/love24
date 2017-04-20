@@ -1,3 +1,18 @@
+input, textarea {
+    &:required:valid {
+        border: 1px solid $brand-success;
+    }
+    &:focus {
+        &:invalid {
+            border: 1px solid $brand-danger;    
+        }
+        &:valid {
+                border: 1px solid $brand-success;
+            }
+    }
+    
+}
+
 @include media-breakpoint-up(lg) {
 	.submission-guidlines {
 		border-left: 1px solid $gray-lighter;
