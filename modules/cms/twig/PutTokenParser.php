@@ -4,18 +4,20 @@ use Twig_Token;
 use Twig_TokenParser;
 
 /**
- * Parser for the `{% put %}` Twig tag.
+ * Parser for the {% put %} Twig tag.
  *
- *     {% put head %}
- *         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
- *     {% endput %}
+ * <pre>
+ *  {% put head %}
+ *    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+ *  {% endput %}
  *
  * or
  *
- *     {% put head %}
- *         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
- *         {% default %}
- *     {% endput %}
+ * {% put head %}
+ *   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+ *   {% default %}
+ * {% endput %}
+ * </pre>
  *
  * @package october\cms
  * @author Alexey Bobkov, Samuel Georges
@@ -26,6 +28,7 @@ class PutTokenParser extends Twig_TokenParser
      * Parses a token and returns a node.
      *
      * @param Twig_Token $token A Twig_Token instance
+     *
      * @return Twig_NodeInterface A Twig_NodeInterface instance
      */
     public function parse(Twig_Token $token)

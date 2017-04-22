@@ -6,7 +6,6 @@ use Cache;
 use Config;
 use Cms\Twig\Loader as TwigLoader;
 use Cms\Twig\Extension as CmsTwigExtension;
-use Cms\Components\ViewBag;
 use System\Twig\Extension as SystemTwigExtension;
 use October\Rain\Halcyon\Processors\SectionParser;
 use Twig_Environment;
@@ -270,7 +269,7 @@ class CmsCompoundObject extends CmsObject
      */
     public function getComponentProperties($componentName)
     {
-        $key = md5($this->theme->getPath()).'component-properties';
+        $key = crc32($this->theme->getPath()).'component-properties';
 
         if (self::$objectComponentPropertyMap !== null) {
             $objectComponentMap = self::$objectComponentPropertyMap;
@@ -337,7 +336,7 @@ class CmsCompoundObject extends CmsObject
      */
     public static function clearCache($theme)
     {
-        $key = md5($theme->getPath()).'component-properties';
+        $key = crc32($theme->getPath()).'component-properties';
         Cache::forget($key);
     }
 
@@ -349,7 +348,7 @@ class CmsCompoundObject extends CmsObject
      * Returns the configured view bag component.
      * This method is used only in the back-end and for internal system needs when 
      * the standard way to access components is not an option.
-     * @return \Cms\Components\ViewBag Returns the view bag component instance.
+     * @return \Cms\Classes\ViewBag Returns the view bag component instance.
      */
     public function getViewBag()
     {
@@ -489,4 +488,5 @@ class CmsCompoundObject extends CmsObject
 
         return parent::__call($method, $parameters);
     }
+
 }

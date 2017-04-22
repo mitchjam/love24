@@ -4,14 +4,16 @@ use System\Behaviors\SettingsModel;
 use Backend\Models\UserPreference;
 
 /**
- * User Preferences model extension, identical to System\Behaviors\SettingsModel
- * except values are set against the logged in user's preferences via Backend\Models\UserPreference
+ * User Preferences model extension, identical to System.Behaviors.SettingsModel
+ * except values are set against the logged in user's preferences via Backend\Models\UserPreference.
  *
- * Add this the model class definition:
+ * Usage:
  *
- *     public $implement = ['Backend.Behaviors.UserPreferencesModel'];
- *     public $settingsCode = 'author.plugin::code';
- *     public $settingsFields = 'fields.yaml';
+ * In the model class definition:
+ *
+ *   public $implement = ['Backend.Behaviors.UserPreferencesModel'];
+ *   public $settingsCode = 'author.plugin::code';
+ *   public $settingsFields = 'fields.yaml';
  *
  */
 class UserPreferencesModel extends SettingsModel

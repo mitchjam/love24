@@ -49,8 +49,7 @@
         paragraphStyles: null,
         tableStyles: null,
         tableCellStyles: null,
-        aceVendorPath: '/',
-        readOnly: false
+        aceVendorPath: '/'
     }
 
     RichEditor.prototype.init = function() {
@@ -77,8 +76,7 @@
             language: this.options.editorLang,
             fullPage: this.options.fullpage,
             pageLinksHandler: this.options.linksHandler,
-            aceEditorVendorPath: this.options.aceVendorPath,
-            toolbarSticky: false
+            aceEditorVendorPath: this.options.aceVendorPath
         }
 
         if (this.options.toolbarButtons) {
@@ -176,10 +174,6 @@
         this.$textarea.froalaEditor(froalaOptions)
 
         this.editor = this.$textarea.data('froala.editor')
-
-        if (this.options.readOnly) {
-            this.editor.edit.off()
-        }
 
         this.$el.on('keydown', '.fr-view figure', this.proxy(this.onFigureKeydown))
     }

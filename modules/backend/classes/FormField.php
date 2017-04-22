@@ -24,9 +24,8 @@ class FormField
     public $fieldName;
 
     /**
-     * @var string If the field element names should be contained in an array. Eg:
-     *
-     *     <input name="nameArray[fieldName]" />
+     * @var string If the field element names should be contained in an array.
+     * Eg: <input name="nameArray[fieldName]" />
      */
     public $arrayName;
 
@@ -617,10 +616,8 @@ class FormField
     }
 
     /**
-     * Returns the final model and attribute name of a nested attribute. Eg:
-     *
-     *     list($model, $attribute) = $this->resolveAttribute('person[phone]');
-     *
+     * Returns the final model and attribute name of a nested attribute.
+     * Eg: list($model, $attribute) = $this->resolveAttribute('person[phone]');
      * @param  string $attribute.
      * @return array
      */

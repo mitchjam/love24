@@ -6,15 +6,17 @@ use Twig_TokenParser;
 use Twig_Error_Syntax;
 
 /**
- * Parser for the `{% placeholder %}` Twig tag.
+ * Parser for the {% placeholder %} Twig tag.
  *
- *     {% placeholder head %}
+ * <pre>
+ *  {% placeholder head %}
  *
- * or - use default placeholder content
+ *  or - use default placeholder content
  *
- *     {% placeholder head %}
- *         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
- *     {% endshowblock %}
+ *  {% placeholder head %}
+ *    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+ *  {% endshowblock %}
+ * </pre>
  *
  * @package october\cms
  * @author Alexey Bobkov, Samuel Georges
@@ -25,6 +27,7 @@ class PlaceholderTokenParser extends Twig_TokenParser
      * Parses a token and returns a node.
      *
      * @param Twig_Token $token A Twig_Token instance
+     *
      * @return Twig_NodeInterface A Twig_NodeInterface instance
      */
     public function parse(Twig_Token $token)

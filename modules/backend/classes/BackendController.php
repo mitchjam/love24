@@ -11,15 +11,9 @@ use October\Rain\Router\Helper as RouterHelper;
 use Closure;
 
 /**
- * This is the master controller for all back-end pages.
- * All requests that are prefixed with the backend URI pattern are sent here,
- * then the next URI segments are analysed and the request is routed to the
- * relevant back-end controller.
+ * The Backend controller class.
+ * The base controller services back end pages.
  *
- * For example, a request with the URL `/backend/acme/blog/posts` will look
- * for the `Posts` controller inside the `Acme.Blog` plugin.
- *
- * @see Backend\Classes\Controller Base class for back-end controllers
  * @package october\backend
  * @author Alexey Bobkov, Samuel Georges
  */

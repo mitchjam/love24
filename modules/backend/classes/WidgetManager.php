@@ -93,7 +93,7 @@ class WidgetManager
     /**
      * Registers a single form form widget.
      * @param string $className Widget class name.
-     * @param array $widgetInfo Registration information, can contain a `code` key.
+     * @param array $widgetInfo Registration information, can contain an 'code' key.
      * @return void
      */
     public function registerFormWidget($className, $widgetInfo = null)
@@ -115,11 +115,11 @@ class WidgetManager
     /**
      * Manually registers form widget for consideration.
      * Usage:
-     *
-     *     WidgetManager::registerFormWidgets(function($manager){
-     *         $manager->registerFormWidget('Backend\FormWidgets\CodeEditor', 'codeeditor');
-     *     });
-     *
+     * <pre>
+     *   WidgetManager::registerFormWidgets(function($manager){
+     *       $manager->registerFormWidget('Backend\FormWidgets\CodeEditor', 'codeeditor');
+     *   });
+     * </pre>
      */
     public function registerFormWidgets(callable $definitions)
     {
@@ -202,14 +202,14 @@ class WidgetManager
     /**
      * Manually registers report widget for consideration.
      * Usage:
-     *
-     *     WidgetManager::registerReportWidgets(function($manager){
-     *         $manager->registerReportWidget('RainLab\GoogleAnalytics\ReportWidgets\TrafficOverview', [
-     *             'name'=>'Google Analytics traffic overview',
-     *             'context'=>'dashboard'
-     *         ]);
-     *     });
-     *
+     * <pre>
+     *   WidgetManager::registerReportWidgets(function($manager){
+     *       $manager->registerReportWidget('RainLab\GoogleAnalytics\ReportWidgets\TrafficOverview', [
+     *           'name'=>'Google Analytics traffic overview',
+     *           'context'=>'dashboard'
+     *       ]);
+     *   });
+     * </pre>
      */
     public function registerReportWidgets(callable $definitions)
     {

@@ -149,9 +149,9 @@ class PluginManager
      * Runs the register() method on all plugins. Can only be called once.
      * @return void
      */
-    public function registerAll($force = false)
+    public function registerAll()
     {
-        if ($this->registered && !$force) {
+        if ($this->registered) {
             return;
         }
 
@@ -241,9 +241,9 @@ class PluginManager
     /**
      * Runs the boot() method on all plugins. Can only be called once.
      */
-    public function bootAll($force = false)
+    public function bootAll()
     {
-        if ($this->booted && !$force) {
+        if ($this->booted) {
             return;
         }
 
@@ -565,12 +565,8 @@ class PluginManager
     //
 
     /**
-     * Scans the system plugins to locate any dependencies that are not currently
-     * installed. Returns an array of plugin codes that are needed.
-     *
-     *     PluginManager::instance()->findMissingDependencies();
-     *
-     * @return array
+     * Scans the system plugins to locate any dependencies
+     * that are not currently installed.
      */
     public function findMissingDependencies()
     {
@@ -596,7 +592,6 @@ class PluginManager
     /**
      * Cross checks all plugins and their dependancies, if not met plugins
      * are disabled and vice versa.
-     * @return void
      */
     protected function loadDependencies()
     {

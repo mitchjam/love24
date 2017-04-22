@@ -32,7 +32,7 @@ if (window.jQuery.request !== undefined) {
         /*
          * Prepare the options and execute the request
          */
-        var $form = options.form ? $(options.form) : $el.closest('form'),
+        var $form = $el.closest('form'),
             $triggerEl = !!$form.length ? $form : $el,
             context = { handler: handler, options: options }
 
@@ -75,7 +75,6 @@ if (window.jQuery.request !== undefined) {
 
         var requestOptions = {
             url: window.location.href,
-            crossDomain: false,
             context: context,
             headers: requestHeaders,
             success: function(data, textStatus, jqXHR) {
@@ -377,7 +376,6 @@ if (window.jQuery.request !== undefined) {
             redirect: $this.data('request-redirect'),
             loading: $this.data('request-loading'),
             flash: $this.data('request-flash'),
-            form: $this.data('request-form'),
             update: paramToObj('data-request-update', $this.data('request-update')),
             data: paramToObj('data-request-data', $this.data('request-data'))
         }
@@ -389,7 +387,7 @@ if (window.jQuery.request !== undefined) {
     $.fn.request.Constructor = Request
 
     $.request = function(handler, option) {
-        return $(document).request(handler, option)
+        return $('<form />').request(handler, option)
     }
 
     // REQUEST NO CONFLICT

@@ -14,27 +14,9 @@ use ApplicationException;
 use Exception;
 
 /**
- * Adds features for working with backend forms. This behavior
- * will inject CRUD actions to the controller -- including create,
- * update and preview -- along with some relevant AJAX handlers.
+ * Form Controller Behavior
+ * Adds features for working with backend forms.
  *
- * Each action supports a custom context code, allowing fields
- * to be displayed or hidden on a contextual basis, as specified
- * by the form field definitions or some other custom logic.
- *
- * This behavior is implemented in the controller like so:
- *
- *     public $implement = [
- *         'Backend.Behaviors.FormController',
- *     ];
- *
- *     public $formConfig = 'config_form.yaml';
- *
- * The `$formConfig` property makes reference to the form configuration
- * values as either a YAML file, located in the controller view directory,
- * or directly as a PHP array.
- *
- * @see http://octobercms.com/docs/backend/forms Back-end form documentation
  * @package october\backend
  * @author Alexey Bobkov, Samuel Georges
  */
@@ -68,7 +50,7 @@ class FormController extends ControllerBehavior
     protected $formWidget;
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected $requiredProperties = ['formConfig'];
 
@@ -105,22 +87,14 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Initialize the form configuration against a model and context value.
-     * This will process the configuration found in the `$formConfig` property
-     * and prepare the Form widget, which is the underlying tool used for
-     * actually rendering the form. The model used by this form is passed
-     * to this behavior via this method as the first argument.
-     *
-     * @see Backend\Widgets\Form
-     * @param October\Rain\Database\Model $model
-     * @param string $context Form context
+     * Prepare the widgets used by this action
+     * @param Model $model
      * @return void
      */
     public function initForm($model, $context = null)
     {
-        if ($context !== null) {
+        if ($context !== null)
             $this->context = $context;
-        }
 
         $context = $this->formGetContext();
 
@@ -184,8 +158,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Prepares commonly used view data.
-     * @param October\Rain\Database\Model $model
+     * Prepares common form data
      */
     protected function prepareVars($model)
     {
@@ -199,9 +172,8 @@ class FormController extends ControllerBehavior
     //
 
     /**
-     * Controller "create" action used for creating new model records.
-     *
-     * @param string $context Form context
+     * Create Controller action
+     * @param string $context Explicitly define a form context.
      * @return void
      */
     public function create($context = null)
@@ -224,13 +196,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * AJAX handler "onSave" called from the create action and
-     * primarily used for creating new records.
-     *
-     * This handler will invoke the unique controller overrides
-     * `formBeforeCreate` and `formAfterCreate`.
-     *
-     * @param string $context Form context
+     * Ajax handler for saving from the creation form.
      * @return mixed
      */
     public function create_onSave($context = null)
@@ -267,12 +233,9 @@ class FormController extends ControllerBehavior
     //
 
     /**
-     * Controller "update" action used for updating existing model records.
-     * This action takes a record identifier (primary key of the model)
-     * to locate the record used for sourcing the existing form values.
-     *
-     * @param int $recordId Record identifier
-     * @param string $context Form context
+     * Edit Controller action
+     * @param int $recordId The model primary key to update.
+     * @param string $context Explicitly define a form context.
      * @return void
      */
     public function update($recordId = null, $context = null)
@@ -293,14 +256,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * AJAX handler "onSave" called from the update action and
-     * primarily used for updating existing records.
-     *
-     * This handler will invoke the unique controller overrides
-     * `formBeforeUpdate` and `formAfterUpdate`.
-     *
-     * @param int $recordId Record identifier
-     * @param string $context Form context
+     * Ajax handler for updating the form.
+     * @param int $recordId The model primary key to update.
      * @return mixed
      */
     public function update_onSave($recordId = null, $context = null)
@@ -330,13 +287,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * AJAX handler "onDelete" called from the update action and
-     * used for deleting existing records.
-     *
-     * This handler will invoke the unique controller override
-     * `formAfterDelete`.
-     *
-     * @param int $recordId Record identifier
+     * Ajax handler for deleting the record.
+     * @param int $recordId The model primary key to delete.
      * @return mixed
      */
     public function update_onDelete($recordId = null)
@@ -361,12 +313,9 @@ class FormController extends ControllerBehavior
     //
 
     /**
-     * Controller "preview" action used for viewing existing model records.
-     * This action takes a record identifier (primary key of the model)
-     * to locate the record used for sourcing the existing preview data.
-     *
-     * @param int $recordId Record identifier
-     * @param string $context Form context
+     * Preview Controller action
+     * @param int $recordId The model primary key to preview.
+     * @param string $context Explicitly define a form context.
      * @return void
      */
     public function preview($recordId = null, $context = null)
@@ -391,18 +340,8 @@ class FormController extends ControllerBehavior
     //
 
     /**
-     * Method to render the prepared form markup. This method is usually
-     * called from a view file.
-     *
-     *     <?= $this->formRender() ?>
-     *
-     * The first argument supports an array of render options. The supported
-     * options can be found via the `render` method of the Form widget class.
-     *
-     *     <?= $this->formRender(['preview' => true, section' => 'primary']) ?>
-     *
-     * @see Backend\Widgets\Form
-     * @param array $options Render options
+     * Render the form.
+     * @param array $options Custom options to pass to the form widget.
      * @return string Rendered HTML for the form.
      */
     public function formRender($options = [])
@@ -416,10 +355,7 @@ class FormController extends ControllerBehavior
 
     /**
      * Returns the model initialized by this form behavior.
-     * The model will be provided by one of the page actions or AJAX
-     * handlers via the `initForm` method.
-     *
-     * @return October\Rain\Database\Model
+     * @return Model
      */
     public function formGetModel()
     {
@@ -427,10 +363,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Returns the active form context, either obtained from the postback
-     * variable called `form_context` or detected from the configuration,
-     * or routing parameters.
-     *
+     * Returns the form context from the postback or configuration.
      * @return string
      */
     public function formGetContext()
@@ -439,9 +372,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Internal method used to prepare the form model object.
-     *
-     * @return October\Rain\Database\Model
+     * Internal method, prepare the form model object
+     * @return Model
      */
     protected function createModel()
     {
@@ -451,9 +383,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Returns a Redirect object based on supplied context and parses
-     * the model primary key.
-     *
+     * Returns a Redirect object based on supplied context and parses the model primary key.
      * @param string $context Redirect context, eg: create, update, delete
      * @param Model $model The active model to parse in it's ID and attributes.
      * @return Redirect
@@ -481,9 +411,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Internal method that returns a redirect URL from the config based on 
+     * Internal method, returns a redirect URL from the config based on 
      * supplied context. Otherwise the default redirect is used.
-     *
      * @param string $context Redirect context, eg: create, update, delete.
      * @return string
      */
@@ -507,7 +436,6 @@ class FormController extends ControllerBehavior
 
     /**
      * Parses in some default variables to a language string defined in config.
-     *
      * @param string $name Configuration property containing the language string
      * @param string $default A default language string to use if the config is not found
      * @param array $extras Any extra params to include in the language string variables
@@ -528,12 +456,9 @@ class FormController extends ControllerBehavior
     //
 
     /**
-     * View helper to render a single form field.
-     *
-     *     <?= $this->formRenderField('field_name') ?>
-     *
-     * @param string $name Field name
-     * @return string HTML markup
+     * Renders a single form field.
+     * @param string Field name
+     * @return string The field HTML markup.
      */
     public function formRenderField($name)
     {
@@ -541,10 +466,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to render the form in preview mode.
-     *
-     *     <?= $this->formRenderPreview() ?>
-     *
+     * Renders the form in preview mode.
      * @return string The form HTML markup.
      */
     public function formRenderPreview()
@@ -553,13 +475,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to check if a form tab has fields in the 
-     * non-tabbed section (outside fields).
-     *
-     *     <?php if ($this->formHasOutsideFields()): ?>
-     *         <!-- Do something -->
-     *     <?php endif ?>
-     *
+     * Helper to check if a form tab has fields.
      * @return bool
      */
     public function formHasOutsideFields()
@@ -568,12 +484,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to render the form fields belonging to the
-     * non-tabbed section (outside form fields).
-     *
-     *     <?= $this->formRenderOutsideFields() ?>
-     *
-     * @return string HTML markup
+     * Helper for custom layouts. Renders Outside Fields.
+     * @return string The area HTML markup.
      */
     public function formRenderOutsideFields()
     {
@@ -581,13 +493,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to check if a form tab has fields in the 
-     * primary tab section.
-     *
-     *     <?php if ($this->formHasPrimaryTabs()): ?>
-     *         <!-- Do something -->
-     *     <?php endif ?>
-     *
+     * Helper to check if a form tab has fields.
      * @return bool
      */
     public function formHasPrimaryTabs()
@@ -596,12 +502,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to render the form fields belonging to the
-     * primary tabs section.
-     *
-     *     <?= $this->formRenderPrimaryTabs() ?>
-     *
-     * @return string HTML markup
+     * Helper for custom layouts. Renders Primary Tabs.
+     * @return string The tab HTML markup.
      */
     public function formRenderPrimaryTabs()
     {
@@ -609,13 +511,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to check if a form tab has fields in the 
-     * secondary tab section.
-     *
-     *     <?php if ($this->formHasSecondaryTabs()): ?>
-     *         <!-- Do something -->
-     *     <?php endif ?>
-     *
+     * Helper to check if a form tab has fields.
      * @return bool
      */
     public function formHasSecondaryTabs()
@@ -624,12 +520,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * View helper to render the form fields belonging to the
-     * secondary tabs section.
-     *
-     *     <?= $this->formRenderPrimaryTabs() ?>
-     *
-     * @return string HTML markup
+     * Helper for custom layouts. Renders Secondary Tabs.
+     * @return string The tab HTML markup.
      */
     public function formRenderSecondaryTabs()
     {
@@ -637,9 +529,8 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Returns the form widget used by this behavior.
-     *
-     * @return Backend\Widgets\Form
+     * Returns the widget used by this behavior.
+     * @return Backend\Classes\WidgetBase
      */
     public function formGetWidget()
     {
@@ -647,17 +538,7 @@ class FormController extends ControllerBehavior
     }
 
     /**
-     * Returns a unique ID for the form widget used by this behavior.
-     * This is useful for dealing with identifiers in the markup.
-     *
-     *     <div id="<?= $this->formGetId()">...</div>
-     *
-     * A suffix may be used passed as the first argument to reuse
-     * the identifier in other areas.
-     *
-     *     <button id="<?= $this->formGetId('button')">...</button>
-     *
-     * @param string $suffix
+     * Helper to get a unique ID for the form widget.
      * @return string
      */
     public function formGetId($suffix = null)
@@ -667,10 +548,9 @@ class FormController extends ControllerBehavior
 
     /**
      * Helper to get the form session key.
-     *
      * @return string
      */
-    public function formGetSessionKey()
+    public function formGetSessionKey($suffix = null)
     {
         return $this->formWidget->getSessionKey();
     }
@@ -860,4 +740,5 @@ class FormController extends ControllerBehavior
             call_user_func_array($callback, [$widget, $widget->model, $widget->getContext()]);
         });
     }
+
 }

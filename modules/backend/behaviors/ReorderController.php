@@ -6,19 +6,8 @@ use ApplicationException;
 use Backend\Classes\ControllerBehavior;
 
 /**
+ * Reorder Controller Behavior
  * Used for reordering and sorting records.
- *
- * This behavior is implemented in the controller like so:
- *
- *     public $implement = [
- *         'Backend.Behaviors.ReorderController',
- *     ];
- *
- *     public $reorderConfig = 'config_reorder.yaml';
- *
- * The `$reorderConfig` property makes reference to the configuration
- * values as either a YAML file, located in the controller view directory,
- * or directly as a PHP array.
  *
  * @package october\backend
  * @author Alexey Bobkov, Samuel Georges
@@ -26,7 +15,7 @@ use Backend\Classes\ControllerBehavior;
 class ReorderController extends ControllerBehavior
 {
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected $requiredProperties = ['reorderConfig'];
 

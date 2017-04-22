@@ -6,14 +6,6 @@ use Cms\Classes\Theme;
 use Cms\Classes\ThemeManager;
 use System\Classes\UpdateManager;
 
-/**
- * Console command to list themes.
- *
- * This lists all the available themes in the system. It also shows the active theme.
- *
- * @package october\system
- * @author Alexey Bobkov, Samuel Georges
- */
 class ThemeList extends Command
 {
     /**

@@ -7,13 +7,11 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Console command to implement a "public" folder.
- *
  * This command will create symbolic links to files and directories
  * that are commonly required to be publicly available.
  *
- * @package october\system
- * @author Alexey Bobkov, Samuel Georges
+ * It is experimental and currently undergoing testing,
+ * see: https://github.com/octobercms/october/issues/1331
  */
 class OctoberMirror extends Command
 {

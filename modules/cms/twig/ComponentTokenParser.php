@@ -6,9 +6,11 @@ use Twig_TokenParser;
 use Twig_Error_Syntax;
 
 /**
- * Parser for the `{% component %}` Twig tag.
+ * Parser for the {% component %} Twig tag.
  *
- *     {% component "pluginComponent" %}
+ * <pre>
+ *  {% component "pluginComponent" %}
+ * </pre>
  *
  * @package october\cms
  * @author Alexey Bobkov, Samuel Georges
@@ -19,6 +21,7 @@ class ComponentTokenParser extends Twig_TokenParser
      * Parses a token and returns a node.
      *
      * @param Twig_Token $token A Twig_Token instance
+     *
      * @return Twig_NodeInterface A Twig_NodeInterface instance
      */
     public function parse(Twig_Token $token)

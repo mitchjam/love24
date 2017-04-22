@@ -15,6 +15,7 @@ fields:
         options:
             Musicbed: Musicbed
             Marmoset: Marmoset
+            'Art List': 'Art List'
             'Given Permission': 'Given Permission'
             Songfreedom: Songfreedom
             Soundstripe: Soundstripe

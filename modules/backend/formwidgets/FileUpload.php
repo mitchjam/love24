@@ -77,12 +77,12 @@ class FileUpload extends FormWidgetBase
     //
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected $defaultAlias = 'fileupload';
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function init()
     {
@@ -96,15 +96,11 @@ class FileUpload extends FormWidgetBase
             'useCaption'
         ]);
 
-        if ($this->formField->disabled) {
-            $this->previewMode = true;
-        }
-
         $this->checkUploadPostback();
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function render()
     {
@@ -332,7 +328,7 @@ class FileUpload extends FormWidgetBase
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected function loadAssets()
     {
@@ -341,7 +337,7 @@ class FileUpload extends FormWidgetBase
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getSaveValue($value)
     {

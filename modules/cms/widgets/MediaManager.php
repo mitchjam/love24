@@ -1099,16 +1099,9 @@ class MediaManager extends WidgetBase
             $path = MediaLibrary::validatePath($path);
             $filePath = $path.'/'.$fileName;
 
-            /*
-             * getRealPath() can be empty for some environments (IIS)
-             */
-            $realPath = empty(trim($uploadedFile->getRealPath()))
-                             ? $uploadedFile->getPath() . DIRECTORY_SEPARATOR . $uploadedFile->getFileName()
-                             : $uploadedFile->getRealPath();
-
             MediaLibrary::instance()->put(
                 $filePath,
-                File::get($realPath)
+                File::get($uploadedFile->getRealPath())
             );
 
             /*

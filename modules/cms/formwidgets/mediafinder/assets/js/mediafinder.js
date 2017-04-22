@@ -33,22 +33,13 @@
             this.options.isMulti = this.$el.hasClass('is-multi')
         }
 
-        if (this.options.isPreview === null) {
-            this.options.isPreview = this.$el.hasClass('is-preview')
-        }
-
         if (this.options.isImage === null) {
             this.options.isImage = this.$el.hasClass('is-image')
         }
 
-        this.$el.one('dispose-control', this.proxy(this.dispose))
-
-        // Stop here for preview mode
-        if (this.options.isPreview)
-            return
-
         this.$el.on('click', '.find-button', this.proxy(this.onClickFindButton))
         this.$el.on('click', '.find-remove-button', this.proxy(this.onClickRemoveButton))
+        this.$el.one('dispose-control', this.proxy(this.dispose))
 
         this.$findValue = $('[data-find-value]', this.$el)
     }
@@ -119,7 +110,6 @@
 
     MediaFinder.DEFAULTS = {
         isMulti: null,
-        isPreview: null,
         isImage: null
     }
 

@@ -4,9 +4,11 @@ use Twig_Token;
 use Twig_TokenParser;
 
 /**
- * Parser for the `{% scripts %}` Twig tag.
+ * Parser for the {% scripts %} Twig tag.
  *
- *     {% scripts %}
+ * <pre>
+ *  {% scripts %}
+ * </pre>
  *
  * @package october\cms
  * @author Alexey Bobkov, Samuel Georges
@@ -17,6 +19,7 @@ class ScriptsTokenParser extends Twig_TokenParser
      * Parses a token and returns a node.
      *
      * @param Twig_Token $token A Twig_Token instance
+     *
      * @return Twig_NodeInterface A Twig_NodeInterface instance
      */
     public function parse(Twig_Token $token)

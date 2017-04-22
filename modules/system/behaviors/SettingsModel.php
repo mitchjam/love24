@@ -8,11 +8,13 @@ use ApplicationException;
 /**
  * Settings model extension
  *
- * Add this the model class definition:
+ * Usage:
  *
- *     public $implement = ['System.Behaviors.SettingsModel'];
- *     public $settingsCode = 'author_plugin_code';
- *     public $settingsFields = 'fields.yaml';
+ * In the model class definition:
+ *
+ *   public $implement = ['System.Behaviors.SettingsModel'];
+ *   public $settingsCode = 'author_plugin_code';
+ *   public $settingsFields = 'fields.yaml';
  *
  */
 class SettingsModel extends ModelBehavior
@@ -29,7 +31,7 @@ class SettingsModel extends ModelBehavior
     private static $instances = [];
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected $requiredProperties = ['settingsFields', 'settingsCode'];
 
@@ -45,6 +47,11 @@ class SettingsModel extends ModelBehavior
         $this->model->guard([]);
         $this->model->timestamps = false;
 
+        // Option A: (@todo Determine which is faster by benchmark)
+        // $relativePath = strtolower(str_replace('\\', '/', get_class($model)));
+        // $this->configPath = ['modules/' . $relativePath, 'plugins/' . $relativePath];
+
+        // Option B:
         $this->configPath = $this->guessConfigPathFrom($model);
 
         /*

@@ -7,14 +7,6 @@ use Cms\Classes\ThemeManager;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
-/**
- * Console command to remove boilerplate.
- *
- * This removes the demo theme and plugin. A great way to start a fresh project!
- *
- * @package october\system
- * @author Alexey Bobkov, Samuel Georges
- */
 class OctoberFresh extends Command
 {
     use \Illuminate\Console\ConfirmableTrait;
