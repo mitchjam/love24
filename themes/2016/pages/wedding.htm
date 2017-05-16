@@ -14,7 +14,7 @@ function onStart()
   	$this['wedding'] = $wedding = Wedding::findBySlug($this->param('slug'));
 
   	if (! $wedding) {
-  		return redirect('/')->withErrors(['I\'m sorry we can\'t seem to find the post or page you were looking for.']);
+  		return redirect('/')->withErrors(["I'm sorry we can't seem to find the post or page you were looking for."]);
   	}
 
 	$this->page->title = $wedding->title;
